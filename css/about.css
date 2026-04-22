@@ -1,0 +1,16 @@
+/* ============================================
+   ABOUT — Bio and photo
+   ============================================ */
+#about { position:relative;overflow:hidden; }
+#about .about-grid { display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start; }
+.about-title { font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:300;line-height:1.1;color:var(--white);margin-bottom:2rem; }
+.about-title em { font-style:italic;color:var(--accent); }
+.about-text { color:var(--muted);line-height:1.9;font-size:13px; }
+.about-text + .about-text { margin-top:1rem; }
+.availability-tag { display:inline-flex;align-items:center;gap:0.5rem;margin-top:2rem;font-size:11px;color:var(--accent2);letter-spacing:0.08em; }
+.availability-tag::before { content:'';width:8px;height:8px;background:var(--accent2);border-radius:50%;animation:pulse 2s infinite; }
+.about-photo-wrap { position:relative;width:100%;max-width:340px;aspect-ratio:3/4;overflow:hidden;border:1px solid var(--border); }
+.about-photo-wrap::after { content:'';position:absolute;inset:0;background:linear-gradient(to top,var(--bg) 0%,transparent 40%);pointer-events:none; }
+.about-photo-wrap img { width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(20%) contrast(1.1);transition:transform 0.6s ease; }
+.about-photo-wrap:hover img { transform:scale(1.03); }
+.photo-label { position:absolute;bottom:1.5rem;left:1.5rem;z-index:2;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent); }

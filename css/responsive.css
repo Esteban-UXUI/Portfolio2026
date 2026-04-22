@@ -1,0 +1,42 @@
+/* ============================================
+   RESPONSIVE — Mobile first breakpoints
+   ============================================ */
+
+@media (max-width: 768px) {
+
+  /* Nav */
+  nav { padding: 1.2rem 1.5rem; }
+  .nav-links { display: none; }
+
+  /* Hero */
+  #hero { padding: 0 1.5rem 4rem; }
+  .hero-bottom { flex-direction: column; align-items: flex-start; gap: 2rem; }
+  .hero-stats  { gap: 2rem; text-align: left; }
+  .scroll-hint { display: none; }
+
+  /* Sections */
+  section { padding: 5rem 1.5rem; }
+
+  /* About */
+  #about .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+
+  /* Skills */
+  #skills .skills-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Clients */
+  .clients-grid  { grid-template-columns: 1fr; }
+  .clients-intro { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .clients-note  { text-align: left; }
+
+  /* Experience */
+  .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+
+  /* Footer */
+  footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  #skills .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  .clients-grid { grid-template-columns: repeat(2, 1fr); }
+  #about .about-grid { gap: 3rem; }
+}

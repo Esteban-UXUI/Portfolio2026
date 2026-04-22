@@ -1,0 +1,421 @@
+/* ============================================
+   PARALLAX BG TEXT & DOTS (shared)
+   ============================================ */
+
+.section-bg-text {
+  position: absolute;
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(6rem, 15vw, 14rem);
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.02);
+  pointer-events: none;
+  white-space: nowrap;
+  line-height: 1;
+  will-change: transform;
+  letter-spacing: -0.04em;
+  user-select: none;
+}
+
+#about, #skills, #clients, #experience {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-dots {
+  position: absolute;
+  width: 100%; height: 100%;
+  top: 0; left: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.pdot {
+  position: absolute;
+  width: 2px; height: 2px;
+  background: var(--accent);
+  border-radius: 50%;
+  opacity: 0.3;
+  will-change: transform;
+}
+
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
+
+#about .about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+.about-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--white);
+  margin-bottom: 2rem;
+}
+
+.about-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.about-text {
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: 13px;
+}
+
+.about-text + .about-text {
+  margin-top: 1rem;
+}
+
+.availability-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  font-size: 11px;
+  color: var(--accent2);
+  letter-spacing: 0.08em;
+}
+
+.availability-tag::before {
+  content: '';
+  width: 8px; height: 8px;
+  background: var(--accent2);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+/* Photo */
+.about-photo-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.about-photo-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--bg) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.about-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(20%) contrast(1.1);
+  transition: transform 0.6s ease;
+}
+
+.about-photo-wrap:hover img {
+  transform: scale(1.03);
+}
+
+.photo-label {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 2;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ============================================
+   SKILLS SECTION
+   ============================================ */
+
+#skills .skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.skill-item {
+  background: var(--bg);
+  padding: 1.8rem;
+  transition: background 0.3s;
+  cursor: default;
+}
+
+.skill-item:hover {
+  background: var(--bg3);
+}
+
+.skill-icon {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.skill-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.3rem;
+}
+
+.skill-desc {
+  font-size: 10px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ============================================
+   CLIENTS SECTION
+   ============================================ */
+
+#clients .clients-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 4rem;
+}
+
+.clients-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.1;
+}
+
+.clients-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.clients-note {
+  font-size: 11px;
+  color: var(--muted);
+  max-width: 260px;
+  text-align: right;
+}
+
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.client-card {
+  background: var(--bg);
+  padding: 2.5rem;
+  transition: background 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.client-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 0;
+  background: var(--accent);
+  transition: height 0.4s ease;
+}
+
+.client-card:hover { background: var(--bg3); }
+.client-card:hover::before { height: 100%; }
+
+.client-sector {
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent2);
+  margin-bottom: 0.8rem;
+}
+
+.client-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.client-work {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.client-tag {
+  display: inline-block;
+  margin-top: 1.2rem;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  border-radius: 100px;
+}
+
+/* ============================================
+   EXPERIENCE SECTION
+   ============================================ */
+
+#experience .exp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.exp-item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 3rem;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s;
+}
+
+.exp-item:hover {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.exp-date {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  padding-top: 0.2rem;
+}
+
+.exp-company {
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+}
+
+.exp-role {
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.6rem;
+}
+
+.exp-desc {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 560px;
+}
+
+/* ============================================
+   CONTACT SECTION
+   ============================================ */
+
+#contact {
+  text-align: center;
+  padding: 8rem 3rem;
+  background: var(--bg2);
+}
+
+.contact-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 2rem;
+}
+
+.contact-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 7vw, 7rem);
+  font-weight: 300;
+  line-height: 0.95;
+  color: var(--white);
+  margin-bottom: 3rem;
+}
+
+.contact-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 2rem;
+  border: 1px solid var(--border);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  transition: all 0.3s;
+  background: transparent;
+}
+
+.contact-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(200, 184, 154, 0.05);
+}
+
+.contact-link.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+  font-weight: 500;
+}
+
+.contact-link.primary:hover {
+  background: var(--white);
+  border-color: var(--white);
+  color: var(--bg);
+}
+
+.contact-location {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+footer {
+  padding: 2rem 3rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-copy,
+.footer-made {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+}
