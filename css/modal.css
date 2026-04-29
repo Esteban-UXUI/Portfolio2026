@@ -1,0 +1,146 @@
+/* ============================================
+   LANGUAGE MODAL
+   ============================================ */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  background: rgba(10, 10, 11, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation: modalIn 0.6s 0.3s ease forwards;
+}
+
+@keyframes modalIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+[data-theme="light"] .modal-backdrop {
+  background: rgba(244, 242, 238, 0.85);
+}
+
+.modal {
+  border: 1px solid var(--border);
+  background: var(--bg2);
+  padding: 3rem;
+  max-width: 420px;
+  width: calc(100% - 3rem);
+  position: relative;
+  transform: translateY(20px);
+  animation: modalSlide 0.5s 0.5s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
+}
+
+@keyframes modalSlide {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.modal-eyebrow {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.modal-eyebrow::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--accent2);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.modal-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.modal-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.modal-sub {
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.modal-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.lang-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
+  padding: 1.2rem 1.4rem;
+  border: 1px solid var(--border);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'DM Mono', monospace;
+  position: relative;
+  overflow: hidden;
+}
+
+.lang-btn::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 2px;
+  background: var(--accent);
+  transition: width 0.4s ease;
+}
+
+.lang-btn:hover { border-color: var(--accent); background: rgba(200,184,154,0.04); }
+.lang-btn:hover::before { width: 100%; }
+
+.lang-flag {
+  font-size: 1.4rem;
+  margin-bottom: 0.2rem;
+}
+
+.lang-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: 0.04em;
+  font-family: 'Syne', sans-serif;
+}
+
+.lang-native {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+}
+
+/* Hide modal */
+.modal-backdrop.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+@media (max-width: 480px) {
+  .modal { padding: 2rem 1.5rem; }
+  .modal-title { font-size: 1.6rem; }
+}

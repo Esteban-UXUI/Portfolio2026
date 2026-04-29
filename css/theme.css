@@ -1,0 +1,126 @@
+/* ============================================
+   LIGHT MODE THEME
+   Overrides dark variables when [data-theme="light"]
+   ============================================ */
+
+[data-theme="light"] {
+  --bg:      #f4f2ee;
+  --bg2:     #eceae5;
+  --bg3:     #e4e1da;
+  --border:  rgba(0, 0, 0, 0.08);
+  --text:    #1a1a1c;
+  --muted:   #7a7a82;
+  --accent:  #8a6d4a;
+  --accent2: #4a7a62;
+  --white:   #1a1a1c;
+}
+
+[data-theme="light"] body::before { opacity: 0.15; }
+
+[data-theme="light"] nav {
+  background: rgba(244, 242, 238, 0.88);
+  border-bottom-color: rgba(0,0,0,0.08);
+}
+
+[data-theme="light"] .parallax-orb { opacity: 0.12; }
+
+[data-theme="light"] .orb-1 {
+  background: radial-gradient(circle, #8a6d4a 0%, transparent 70%);
+}
+[data-theme="light"] .orb-2 {
+  background: radial-gradient(circle, #4a7a62 0%, transparent 70%);
+  opacity: 0.08;
+}
+
+[data-theme="light"] .skill-item  { background: var(--bg2); }
+[data-theme="light"] .skill-item:hover { background: var(--bg3); }
+
+[data-theme="light"] .client-card { background: var(--bg2); }
+[data-theme="light"] .client-card:hover { background: var(--bg3); }
+
+[data-theme="light"] .about-photo-wrap::after {
+  background: linear-gradient(to top, var(--bg) 0%, transparent 40%);
+}
+
+[data-theme="light"] .project-card { background: var(--bg3); border-color: rgba(0,0,0,0.1); }
+
+[data-theme="light"] .project-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(244,242,238,0.97) 0%,
+    rgba(244,242,238,0.82) 50%,
+    rgba(244,242,238,0.1) 100%
+  );
+}
+
+[data-theme="light"] .project-name { color: #1a1a1c; }
+[data-theme="light"] .exp-item:hover { background: rgba(0,0,0,0.02); }
+[data-theme="light"] #contact { background: var(--bg2); }
+
+[data-theme="light"] .section-bg-text { color: rgba(0,0,0,0.03); }
+
+/* ── THEME TOGGLE BUTTON ─────────────────── */
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  background: none;
+  border: 1px solid var(--border);
+  padding: 0.35rem 0.75rem;
+  color: var(--muted);
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: color 0.3s, border-color 0.3s, background 0.3s;
+  border-radius: 100px;
+}
+
+.theme-toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.theme-toggle .toggle-icon {
+  font-size: 12px;
+  transition: transform 0.5s ease;
+}
+
+[data-theme="light"] .theme-toggle .toggle-icon {
+  transform: rotate(180deg);
+}
+
+.theme-toggle .toggle-label-dark { display: inline; }
+.theme-toggle .toggle-label-light { display: none; }
+[data-theme="light"] .theme-toggle .toggle-label-dark { display: none; }
+[data-theme="light"] .theme-toggle .toggle-label-light { display: inline; }
+
+/* ── SMOOTH THEME TRANSITION ─────────────── */
+
+*, *::before, *::after {
+  transition:
+    background-color 0.35s ease,
+    border-color 0.35s ease,
+    color 0.35s ease;
+}
+
+/* Exclude transforms from the global transition (breaks parallax/animations) */
+.parallax-orb,
+.parallax-layer,
+.hero-grid-line,
+.section-bg-text,
+.pdot,
+.carousel-track,
+.project-cover,
+.project-cover-placeholder,
+.project-overlay,
+.about-photo-wrap img,
+.reveal {
+  transition:
+    background-color 0.35s ease,
+    border-color 0.35s ease,
+    color 0.35s ease,
+    opacity 0.35s ease;
+}
