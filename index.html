@@ -4,43 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Esteban · Senior UX/UI Designer</title>
-
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
-
-  <!-- Styles -->
   <link rel="stylesheet" href="css/variables.css" />
   <link rel="stylesheet" href="css/theme.css" />
-  <link rel="stylesheet" href="css/modal.css" />
   <link rel="stylesheet" href="css/nav.css" />
   <link rel="stylesheet" href="css/hero.css" />
   <link rel="stylesheet" href="css/sections.css" />
-  <link rel="stylesheet" href="css/carousel.css" />
+  <link rel="stylesheet" href="css/projects.css" />
+  <link rel="stylesheet" href="css/clients.css" />
   <link rel="stylesheet" href="css/responsive.css" />
 </head>
 <body>
-
-  <!-- ── LANGUAGE MODAL ─────────────────────── -->
-  <div class="modal-backdrop" id="lang-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="modal">
-      <button class="modal-close" id="modal-close" aria-label="Close language selector">✕</button>
-      <div class="modal-eyebrow">Portfolio · Esteban UXUI</div>
-      <h2 class="modal-title" id="modal-title">Choose your<br/><em>language</em></h2>
-      <p class="modal-sub">Select your preferred language.<br/>You can always change it later.</p>
-      <div class="modal-options">
-        <button class="lang-btn" id="lang-en">
-          <span class="lang-flag">🇺🇸</span>
-          <span class="lang-name">English</span>
-          <span class="lang-native">English</span>
-        </button>
-        <button class="lang-btn" id="lang-es">
-          <span class="lang-flag">🇨🇴</span>
-          <span class="lang-name">Español</span>
-          <span class="lang-native">Spanish</span>
-        </button>
-      </div>
-    </div>
-  </div>
 
   <!-- ── NAV ────────────────────────────────── -->
   <nav>
@@ -48,15 +22,25 @@
     <ul class="nav-links">
       <li><a href="#about"      data-i18n="nav.about">About</a></li>
       <li><a href="#skills"     data-i18n="nav.skills">Skills</a></li>
+      <li><a href="#projects"   data-i18n="projects.label">Projects</a></li>
       <li><a href="#clients"    data-i18n="nav.clients">Clients</a></li>
       <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
       <li><a href="#contact"    data-i18n="nav.contact">Contact</a></li>
     </ul>
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-      <span class="toggle-icon">◐</span>
-      <span class="toggle-label-dark"  data-i18n="theme.dark">Light</span>
-      <span class="toggle-label-light" data-i18n="theme.light">Dark</span>
-    </button>
+    <div class="nav-controls">
+      <!-- Language switcher -->
+      <div class="lang-switcher" role="group" aria-label="Language">
+        <button class="lang-opt active" data-lang="en" aria-label="English">EN</button>
+        <div class="lang-divider"></div>
+        <button class="lang-opt" data-lang="es" aria-label="Español">ES</button>
+      </div>
+      <!-- Theme toggle -->
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <span class="toggle-icon">◐</span>
+        <span class="toggle-label-dark"  data-i18n="theme.dark">Light</span>
+        <span class="toggle-label-light" data-i18n="theme.light">Dark</span>
+      </button>
+    </div>
   </nav>
 
   <!-- ── HERO ───────────────────────────────── -->
@@ -67,33 +51,16 @@
     <div class="hero-grid-line" data-speed="0.05"></div>
     <div class="hero-grid-line" data-speed="0.08"></div>
     <div class="hero-grid-line" data-speed="0.04"></div>
-
     <div class="hero-badge parallax-layer" data-speed="0.06" data-i18n="hero.badge">Available for senior roles</div>
-
-    <h1 class="hero-title parallax-layer" data-speed="0.12" data-i18n="hero.title">
-      Senior<br/>UX/UI <em>Designer</em><br/>&amp; Strategist
-    </h1>
-
+    <h1 class="hero-title parallax-layer" data-speed="0.12" data-i18n="hero.title">Senior<br/>UX/UI <em>Designer</em><br/>&amp; Strategist</h1>
     <div class="hero-bottom parallax-layer" data-speed="0.07">
-      <p class="hero-desc" data-i18n="hero.desc">
-        Transforming complex requirements into intuitive and elegant digital experiences — across banking, e-commerce, and streaming.
-      </p>
+      <p class="hero-desc" data-i18n="hero.desc">Transforming complex requirements into intuitive and elegant digital experiences — across banking, e-commerce, and streaming.</p>
       <div class="hero-stats">
-        <div>
-          <span class="stat-num">6+</span>
-          <span class="stat-label" data-i18n="hero.stat1">Years exp.</span>
-        </div>
-        <div>
-          <span class="stat-num">3</span>
-          <span class="stat-label" data-i18n="hero.stat2">Sectors</span>
-        </div>
-        <div>
-          <span class="stat-num">4</span>
-          <span class="stat-label" data-i18n="hero.stat3">Senior roles</span>
-        </div>
+        <div><span class="stat-num">6+</span><span class="stat-label" data-i18n="hero.stat1">Years exp.</span></div>
+        <div><span class="stat-num">3</span><span class="stat-label" data-i18n="hero.stat2">Sectors</span></div>
+        <div><span class="stat-num">4</span><span class="stat-label" data-i18n="hero.stat3">Senior roles</span></div>
       </div>
     </div>
-
     <div class="scroll-hint" data-i18n="hero.scroll">Scroll</div>
   </section>
 
@@ -104,28 +71,17 @@
     <div class="about-grid reveal">
       <div>
         <div class="about-photo-wrap">
-          <img src="assets/images/esteban.jpg"
-               alt="Esteban UXUI"
-               loading="lazy"
-               width="340" height="453" />
+          <img src="assets/images/esteban.jpg" alt="Esteban UXUI" loading="lazy" width="340" height="453" />
           <span class="photo-label" data-i18n="about.photo">Esteban · UXUI Designer</span>
         </div>
       </div>
       <div>
-        <h2 class="about-title" data-i18n="about.title">
-          Design that's<br/><em>measured,</em><br/>not guessed.
-        </h2>
+        <h2 class="about-title" data-i18n="about.title">Design that's<br/><em>measured,</em><br/>not guessed.</h2>
         <div class="availability-tag" data-i18n="about.avail">Open to senior opportunities · Bogotá / Remote</div>
         <br/>
-        <p class="about-text" data-i18n="about.p1">
-          I'm a Senior UX/UI Designer with 6+ years of experience building digital products for banking, e-commerce, and streaming. My work lives at the intersection of user research, data-driven decisions, and elegant execution.
-        </p>
-        <p class="about-text" data-i18n="about.p2">
-          I specialize in leading cross-functional design teams, architecting design systems, and translating business strategy into experiences that convert and retain. I've worked directly with VPs and product leaders, presenting outcomes in terms that matter: metrics, retention, and revenue.
-        </p>
-        <p class="about-text" data-i18n="about.p3">
-          Whether building from zero or scaling what exists — I bring structure, craft, and speed.
-        </p>
+        <p class="about-text" data-i18n="about.p1">I'm a Senior UX/UI Designer with 6+ years of experience building digital products for banking, e-commerce, and streaming.</p>
+        <p class="about-text" data-i18n="about.p2">I specialize in leading cross-functional design teams, architecting design systems, and translating business strategy into experiences that convert and retain.</p>
+        <p class="about-text" data-i18n="about.p3">Whether building from zero or scaling what exists — I bring structure, craft, and speed.</p>
       </div>
     </div>
   </section>
@@ -135,50 +91,18 @@
     <div class="section-bg-text" data-speed="0.06" style="top:0;right:-2%;text-align:right;">SKILLS</div>
     <div class="section-label" data-i18n="skills.label">02 — Skills</div>
     <div class="skills-grid reveal">
-      <div class="skill-item">
-        <span class="skill-icon">◎</span>
-        <div class="skill-name">UX Research</div>
-        <div class="skill-desc">Interviews, usability testing, A/B, card sorting, tree testing</div>
-      </div>
-      <div class="skill-item">
-        <span class="skill-icon">⬡</span>
-        <div class="skill-name">Design Systems</div>
-        <div class="skill-desc">Tokenization, nomenclature, component architecture, Figma</div>
-      </div>
-      <div class="skill-item">
-        <span class="skill-icon">▷</span>
-        <div class="skill-name">Prototyping</div>
-        <div class="skill-desc">Multi-fidelity prototypes, interactive flows, QA validation</div>
-      </div>
-      <div class="skill-item">
-        <span class="skill-icon">↗</span>
-        <div class="skill-name">CRO</div>
-        <div class="skill-desc">Conversion rate optimization, landing pages, Unbounce, WordPress</div>
-      </div>
-      <div class="skill-item">
-        <span class="skill-icon">◈</span>
-        <div class="skill-name">Information Architecture</div>
-        <div class="skill-desc">Content structure, navigation, user flows, mental models</div>
-      </div>
-      <div class="skill-item">
-        <span class="skill-icon">⌘</span>
-        <div class="skill-name">Product Strategy</div>
-        <div class="skill-desc">OKRs, behavioral data, performance metrics, roadmapping</div>
-      </div>
-      <div class="skill-item">
-        <span class="skill-icon">♿</span>
-        <div class="skill-name">Accessibility</div>
-        <div class="skill-desc">WCAG standards, inclusive design, semantic HTML awareness</div>
-      </div>
-      <div class="skill-item">
-        <span class="skill-icon">⚡</span>
-        <div class="skill-name">Team Leadership</div>
-        <div class="skill-desc">Mentoring, agile/scrum, stakeholder management, handoff</div>
-      </div>
+      <div class="skill-item"><span class="skill-icon">◎</span><div class="skill-name">UX Research</div><div class="skill-desc">Interviews, usability testing, A/B, card sorting, tree testing</div></div>
+      <div class="skill-item"><span class="skill-icon">⬡</span><div class="skill-name">Design Systems</div><div class="skill-desc">Tokenization, nomenclature, component architecture, Figma</div></div>
+      <div class="skill-item"><span class="skill-icon">▷</span><div class="skill-name">Prototyping</div><div class="skill-desc">Multi-fidelity prototypes, interactive flows, QA validation</div></div>
+      <div class="skill-item"><span class="skill-icon">↗</span><div class="skill-name">CRO</div><div class="skill-desc">Conversion rate optimization, landing pages, Unbounce, WordPress</div></div>
+      <div class="skill-item"><span class="skill-icon">◈</span><div class="skill-name">Information Architecture</div><div class="skill-desc">Content structure, navigation, user flows, mental models</div></div>
+      <div class="skill-item"><span class="skill-icon">⌘</span><div class="skill-name">Product Strategy</div><div class="skill-desc">OKRs, behavioral data, performance metrics, roadmapping</div></div>
+      <div class="skill-item"><span class="skill-icon">♿</span><div class="skill-name">Accessibility</div><div class="skill-desc">WCAG standards, inclusive design, semantic HTML awareness</div></div>
+      <div class="skill-item"><span class="skill-icon">⚡</span><div class="skill-name">Team Leadership</div><div class="skill-desc">Mentoring, agile/scrum, stakeholder management, handoff</div></div>
     </div>
   </section>
 
-  <!-- ── PROJECTS ───────────────────────────── -->
+  <!-- ── PROJECTS (Bento Grid) ──────────────── -->
   <section id="projects">
     <div class="section-header">
       <div>
@@ -188,153 +112,175 @@
       <span class="projects-count" data-i18n="projects.count">6 projects · hover to explore</span>
     </div>
 
-    <div class="carousel-wrapper">
-      <div class="carousel-track">
+    <div class="projects-bento reveal">
 
-        <div class="project-card">
-          <div class="project-cover-placeholder" style="background:linear-gradient(135deg,#1a1a2e,#0f3460);">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="32" height="24" rx="2" stroke="rgba(200,184,154,0.3)" stroke-width="1.5"/><rect x="16" y="36" width="16" height="2" rx="1" fill="rgba(200,184,154,0.3)"/></svg>
-          </div>
-          <span class="project-index">01</span>
-          <div class="project-overlay">
-            <div class="project-category">Banking · Design System</div>
-            <div class="project-name">Santander Consumer App</div>
-            <div class="project-detail">Front-end redesign based on Santander's design system. Component architecture, tokenization and accessibility.</div>
-            <div class="project-company-badge">
-              <svg class="project-company-logo" viewBox="0 0 24 24"><rect width="24" height="24" rx="2" fill="rgba(255,255,255,0.1)"/><text x="12" y="16" text-anchor="middle" font-size="10" fill="white" font-family="sans-serif">S</text></svg>
-              <span class="project-company-name">Novatec / Santander</span>
-            </div>
+      <!-- Card 1 — Large -->
+      <div class="bento-card">
+        <div class="bento-cover" style="background:linear-gradient(135deg,#1a1a2e 0%,#0f3460 100%);">
+          <svg width="64" height="64" viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="32" height="24" rx="2" stroke="rgba(200,184,154,0.35)" stroke-width="1.5"/><rect x="16" y="36" width="16" height="2" rx="1" fill="rgba(200,184,154,0.3)"/><rect x="12" y="38" width="24" height="1.5" rx=".75" fill="rgba(200,184,154,0.2)"/></svg>
+        </div>
+        <span class="bento-num">01</span>
+        <div class="bento-overlay">
+          <div class="bento-cat">Banking · Design System</div>
+          <div class="bento-name">Santander Consumer App</div>
+          <div class="bento-detail">Front-end app redesign based on Santander's design system. Component architecture, tokenization and accessibility standards.</div>
+          <div class="bento-badge">
+            <svg class="bento-badge-logo" viewBox="0 0 24 24"><rect width="24" height="24" rx="2" fill="rgba(255,255,255,0.15)"/><text x="12" y="16" text-anchor="middle" font-size="10" fill="white" font-family="sans-serif">S</text></svg>
+            <span class="bento-badge-name">Novatec / Santander</span>
           </div>
         </div>
-
-        <div class="project-card">
-          <div class="project-cover-placeholder" style="background:linear-gradient(135deg,#0d0d0d,#2d1b69);">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="20" r="10" stroke="rgba(124,155,138,0.4)" stroke-width="1.5"/><path d="M8 40c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="rgba(124,155,138,0.4)" stroke-width="1.5"/></svg>
-          </div>
-          <span class="project-index">02</span>
-          <div class="project-overlay">
-            <div class="project-category">Health · UX Strategy</div>
-            <div class="project-name">Sentria Health Platform</div>
-            <div class="project-detail">UX strategy and interface design for a health digital product. Research-driven approach with full accessibility compliance.</div>
-            <div class="project-company-badge">
-              <svg class="project-company-logo" viewBox="0 0 24 24"><rect width="24" height="24" rx="2" fill="rgba(255,255,255,0.1)"/><text x="12" y="16" text-anchor="middle" font-size="9" fill="white" font-family="sans-serif">SE</text></svg>
-              <span class="project-company-name">Sentria</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-cover-placeholder" style="background:linear-gradient(135deg,#0a1628,#2e5984);">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="6" y="10" width="36" height="28" rx="2" stroke="rgba(200,184,154,0.3)" stroke-width="1.5"/><path d="M6 18h36M14 10v28" stroke="rgba(200,184,154,0.2)" stroke-width="1"/></svg>
-          </div>
-          <span class="project-index">03</span>
-          <div class="project-overlay">
-            <div class="project-category">Fintech · Product Design</div>
-            <div class="project-name">Grupo Bolívar Digital</div>
-            <div class="project-detail">Digital product design for financial and real estate services. End-to-end flows, prototyping and design system integration.</div>
-            <div class="project-company-badge">
-              <svg class="project-company-logo" viewBox="0 0 24 24"><rect width="24" height="24" rx="2" fill="rgba(255,255,255,0.1)"/><text x="12" y="16" text-anchor="middle" font-size="9" fill="white" font-family="sans-serif">GB</text></svg>
-              <span class="project-company-name">Grupo Bolívar</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-cover-placeholder" style="background:linear-gradient(135deg,#1a0a0a,#6b2323);">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="10" y="8" width="28" height="36" rx="2" stroke="rgba(200,184,154,0.3)" stroke-width="1.5"/><rect x="14" y="14" width="20" height="2" rx="1" fill="rgba(200,184,154,0.3)"/><rect x="14" y="20" width="14" height="1.5" rx="0.75" fill="rgba(200,184,154,0.2)"/></svg>
-          </div>
-          <span class="project-index">04</span>
-          <div class="project-overlay">
-            <div class="project-category">E-commerce · Brand UX</div>
-            <div class="project-name">Samsung Retail Experience</div>
-            <div class="project-detail">E-commerce UX design and UI kit management for Samsung's web and app platforms across Latin America.</div>
-            <div class="project-company-badge">
-              <svg class="project-company-logo" viewBox="0 0 24 24"><rect width="24" height="24" rx="2" fill="rgba(255,255,255,0.1)"/><text x="12" y="16" text-anchor="middle" font-size="8" fill="white" font-family="sans-serif">SAM</text></svg>
-              <span class="project-company-name">Samsung · StoreON</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-cover-placeholder" style="background:linear-gradient(135deg,#0a1a0a,#2a5c2a);">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M24 8L40 18L40 30L24 40L8 30L8 18Z" stroke="rgba(124,155,138,0.4)" stroke-width="1.5" fill="none"/><circle cx="24" cy="24" r="6" stroke="rgba(124,155,138,0.3)" stroke-width="1.5"/></svg>
-          </div>
-          <span class="project-index">05</span>
-          <div class="project-overlay">
-            <div class="project-category">Telecom · Web UX</div>
-            <div class="project-name">Total Play Digital Suite</div>
-            <div class="project-detail">UX/UI design for telecom digital services. Web experiences, service flows and interface design for end users.</div>
-            <div class="project-company-badge">
-              <svg class="project-company-logo" viewBox="0 0 24 24"><rect width="24" height="24" rx="2" fill="rgba(255,255,255,0.1)"/><text x="12" y="16" text-anchor="middle" font-size="8" fill="white" font-family="sans-serif">TP</text></svg>
-              <span class="project-company-name">Total Play</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-cover-placeholder" style="background:linear-gradient(135deg,#1a1200,#6b4f00);">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="8" y="16" width="32" height="20" rx="2" stroke="rgba(200,184,154,0.3)" stroke-width="1.5"/><path d="M16 16V12a8 8 0 0116 0v4" stroke="rgba(200,184,154,0.2)" stroke-width="1.5"/><circle cx="24" cy="26" r="3" fill="rgba(200,184,154,0.3)"/></svg>
-          </div>
-          <span class="project-index">06</span>
-          <div class="project-overlay">
-            <div class="project-category">AI · Product Strategy</div>
-            <div class="project-name">AI-Integrated Design Strategy</div>
-            <div class="project-detail">Cross-functional design strategy integrating AI models. Performance metrics analysis and behavioral data-driven product decisions.</div>
-            <div class="project-company-badge">
-              <svg class="project-company-logo" viewBox="0 0 24 24"><rect width="24" height="24" rx="2" fill="rgba(255,255,255,0.1)"/><text x="12" y="16" text-anchor="middle" font-size="7" fill="white" font-family="sans-serif">IMG</text></svg>
-              <span class="project-company-name">Imaginamos</span>
-            </div>
-          </div>
-        </div>
-
       </div>
+
+      <!-- Card 2 -->
+      <div class="bento-card">
+        <div class="bento-cover" style="background:linear-gradient(135deg,#0d0d0d 0%,#2d1b69 100%);">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="20" r="10" stroke="rgba(124,155,138,0.45)" stroke-width="1.5"/><path d="M8 40c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="rgba(124,155,138,0.45)" stroke-width="1.5"/></svg>
+        </div>
+        <span class="bento-num">02</span>
+        <div class="bento-overlay">
+          <div class="bento-cat">Health · UX Strategy</div>
+          <div class="bento-name">Sentria Health Platform</div>
+          <div class="bento-detail">Research-driven UX and interface design for a health digital product with full accessibility compliance.</div>
+          <div class="bento-badge"><svg class="bento-badge-logo" viewBox="0 0 24 24"><rect width="24" height="24" rx="2" fill="rgba(255,255,255,0.15)"/><text x="12" y="16" text-anchor="middle" font-size="9" fill="white" font-family="sans-serif">SE</text></svg><span class="bento-badge-name">Sentria</span></div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bento-card">
+        <div class="bento-cover" style="background:linear-gradient(135deg,#0a1628 0%,#2e5984 100%);">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="6" y="10" width="36" height="28" rx="2" stroke="rgba(200,184,154,0.35)" stroke-width="1.5"/><path d="M6 18h36M14 10v28" stroke="rgba(200,184,154,0.2)" stroke-width="1"/></svg>
+        </div>
+        <span class="bento-num">03</span>
+        <div class="bento-overlay">
+          <div class="bento-cat">Fintech · Product Design</div>
+          <div class="bento-name">Grupo Bolívar Digital</div>
+          <div class="bento-detail">End-to-end product design for financial and real estate digital services. Flows, prototyping and design system integration.</div>
+          <div class="bento-badge"><svg class="bento-badge-logo" viewBox="0 0 24 24"><rect width="24" height="24" rx="2" fill="rgba(255,255,255,0.15)"/><text x="12" y="16" text-anchor="middle" font-size="9" fill="white" font-family="sans-serif">GB</text></svg><span class="bento-badge-name">Grupo Bolívar</span></div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bento-card">
+        <div class="bento-cover" style="background:linear-gradient(135deg,#1a0a0a 0%,#6b2323 100%);">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="10" y="8" width="28" height="36" rx="2" stroke="rgba(200,184,154,0.35)" stroke-width="1.5"/><rect x="14" y="14" width="20" height="2" rx="1" fill="rgba(200,184,154,0.3)"/></svg>
+        </div>
+        <span class="bento-num">04</span>
+        <div class="bento-overlay">
+          <div class="bento-cat">E-commerce · Brand UX</div>
+          <div class="bento-name">Samsung Retail Experience</div>
+          <div class="bento-detail">E-commerce UX and UI kit management for Samsung platforms across Latin America.</div>
+          <div class="bento-badge"><svg class="bento-badge-logo" viewBox="0 0 24 24"><rect width="24" height="24" rx="2" fill="rgba(255,255,255,0.15)"/><text x="12" y="16" text-anchor="middle" font-size="8" fill="white" font-family="sans-serif">SAM</text></svg><span class="bento-badge-name">Samsung · StoreON</span></div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="bento-card">
+        <div class="bento-cover" style="background:linear-gradient(135deg,#0a1a0a 0%,#2a5c2a 100%);">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M24 8L40 18L40 30L24 40L8 30L8 18Z" stroke="rgba(124,155,138,0.45)" stroke-width="1.5" fill="none"/><circle cx="24" cy="24" r="6" stroke="rgba(124,155,138,0.3)" stroke-width="1.5"/></svg>
+        </div>
+        <span class="bento-num">05</span>
+        <div class="bento-overlay">
+          <div class="bento-cat">Telecom · Web UX</div>
+          <div class="bento-name">Total Play Digital Suite</div>
+          <div class="bento-detail">UX/UI for telecom digital services. Web experiences and service flows for end users.</div>
+          <div class="bento-badge"><svg class="bento-badge-logo" viewBox="0 0 24 24"><rect width="24" height="24" rx="2" fill="rgba(255,255,255,0.15)"/><text x="12" y="16" text-anchor="middle" font-size="8" fill="white" font-family="sans-serif">TP</text></svg><span class="bento-badge-name">Total Play</span></div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="bento-card">
+        <div class="bento-cover" style="background:linear-gradient(135deg,#1a1200 0%,#6b4f00 100%);">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="8" y="16" width="32" height="20" rx="2" stroke="rgba(200,184,154,0.35)" stroke-width="1.5"/><path d="M16 16V12a8 8 0 0116 0v4" stroke="rgba(200,184,154,0.2)" stroke-width="1.5"/><circle cx="24" cy="26" r="3" fill="rgba(200,184,154,0.35)"/></svg>
+        </div>
+        <span class="bento-num">06</span>
+        <div class="bento-overlay">
+          <div class="bento-cat">AI · Product Strategy</div>
+          <div class="bento-name">AI-Integrated Design Strategy</div>
+          <div class="bento-detail">Cross-functional strategy integrating AI models. Data-driven product decisions at scale.</div>
+          <div class="bento-badge"><svg class="bento-badge-logo" viewBox="0 0 24 24"><rect width="24" height="24" rx="2" fill="rgba(255,255,255,0.15)"/><text x="12" y="16" text-anchor="middle" font-size="7" fill="white" font-family="sans-serif">IMG</text></svg><span class="bento-badge-name">Imaginamos</span></div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- ── CLIENTS ────────────────────────────── -->
+  <!-- ── CLIENTS (Logo carousel) ────────────── -->
   <section id="clients">
     <div class="section-bg-text" data-speed="0.05" style="top:0;left:-2%;">WORK</div>
-    <div class="section-label" data-i18n="clients.label">04 — Clients &amp; Work</div>
-    <div class="clients-intro reveal">
-      <h2 class="clients-title" data-i18n="clients.title">Brands that<br/><em>trusted</em> the process.</h2>
-      <p class="clients-note" data-i18n="clients.note">Selected client work across banking, retail, tech, and streaming sectors.</p>
+    <div class="clients-header">
+      <div>
+        <div class="section-label" data-i18n="clients.label">04 — Clients</div>
+        <h2 class="clients-title" data-i18n="clients.title">Brands that<br/><em>trusted</em> the process.</h2>
+      </div>
+      <p class="clients-note" data-i18n="clients.note">Selected client work across banking, retail, tech & more.</p>
     </div>
-    <div class="clients-grid reveal">
-      <div class="client-card">
-        <div class="client-sector" data-i18n="client.santander.sector">Banking</div>
-        <div class="client-name">Santander</div>
-        <div class="client-work" data-i18n="client.santander.work">App design and component architecture based on Santander Consumer design system.</div>
-        <span class="client-tag">Design System · App UX</span>
-      </div>
-      <div class="client-card">
-        <div class="client-sector" data-i18n="client.samsung.sector">Technology</div>
-        <div class="client-name">Samsung</div>
-        <div class="client-work" data-i18n="client.samsung.work">E-commerce UX design, brand UI kit management, and visual components for web and app platforms.</div>
-        <span class="client-tag">E-commerce · UI Kit</span>
-      </div>
-      <div class="client-card">
-        <div class="client-sector" data-i18n="client.apple.sector">Technology</div>
-        <div class="client-name">Apple</div>
-        <div class="client-work" data-i18n="client.apple.work">Product UX for e-commerce environments. Brand consistency and digital experience across web surfaces.</div>
-        <span class="client-tag">E-commerce · Brand UX</span>
-      </div>
-      <div class="client-card">
-        <div class="client-sector" data-i18n="client.totalplay.sector">Telecommunications</div>
-        <div class="client-name">Total Play</div>
-        <div class="client-work" data-i18n="client.totalplay.work">UX/UI design for digital services and telecom products. Web experiences, flows, and interface design.</div>
-        <span class="client-tag">Web · Digital UX</span>
-      </div>
-      <div class="client-card">
-        <div class="client-sector" data-i18n="client.bolivar.sector">Financial &amp; Real Estate</div>
-        <div class="client-name">Grupo Bolívar</div>
-        <div class="client-work" data-i18n="client.bolivar.work">Digital product design for financial and real estate services. User flows, prototyping, and design system work.</div>
-        <span class="client-tag">Fintech · Product Design</span>
-      </div>
-      <div class="client-card">
-        <div class="client-sector" data-i18n="client.sentria.sector">Health &amp; Wellness</div>
-        <div class="client-name">Sentria</div>
-        <div class="client-work" data-i18n="client.sentria.work">UX strategy and interface design for health digital products. Research-driven design with accessibility focus.</div>
-        <span class="client-tag">Health · UX Strategy</span>
+
+    <div class="logo-carousel-wrap">
+      <div class="logo-track" id="logo-track">
+
+        <!-- Santander -->
+        <div class="logo-cell">
+          <div class="logo-svg-wrap">
+            <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <text x="60" y="28" text-anchor="middle" font-family="Georgia,serif" font-size="22" font-weight="700" fill="currentColor" letter-spacing="-1">Santander</text>
+            </svg>
+          </div>
+          <span class="logo-name">Santander</span>
+        </div>
+
+        <!-- Samsung -->
+        <div class="logo-cell">
+          <div class="logo-svg-wrap">
+            <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <text x="60" y="28" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="currentColor" letter-spacing="2">SAMSUNG</text>
+            </svg>
+          </div>
+          <span class="logo-name">Samsung</span>
+        </div>
+
+        <!-- Apple -->
+        <div class="logo-cell">
+          <div class="logo-svg-wrap">
+            <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M60 6c-2.2 0-4 .8-5.4 2.2-1.3 1.4-2 3.2-1.9 5h1.6c.1-1.4.7-2.7 1.6-3.7 1-1 2.4-1.6 3.8-1.6v-1.9H60zm-3.2 8.8c-1.4 0-2.6.5-3.6 1.4-2 1.8-2.2 5.6-.4 8.8 1 1.8 2 3 3.2 3 .6 0 1.2-.2 1.8-.5.6-.3 1.2-.5 1.8-.5.7 0 1.3.2 1.9.5.6.3 1.1.5 1.7.5 1.3 0 2.4-1.3 3.3-3 .6-1.1 1-2.2 1.2-3.4-1.2-.6-2-1.8-2-3.2 0-1.2.6-2.3 1.5-3-1-.8-2.2-1.3-3.4-1.3-.8 0-1.5.2-2.2.5-.5.3-1 .5-1.5.5-.6 0-1.2-.2-1.8-.5-.6-.4-1.1-.5-1.5-.5v.2z" fill="currentColor"/>
+              <text x="76" y="28" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="300" fill="currentColor" letter-spacing="1">Apple</text>
+            </svg>
+          </div>
+          <span class="logo-name">Apple</span>
+        </div>
+
+        <!-- Total Play -->
+        <div class="logo-cell">
+          <div class="logo-svg-wrap">
+            <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <text x="60" y="22" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="currentColor" letter-spacing="1">TOTAL</text>
+              <text x="60" y="36" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="300" fill="currentColor" letter-spacing="2">PLAY</text>
+            </svg>
+          </div>
+          <span class="logo-name">Total Play</span>
+        </div>
+
+        <!-- Grupo Bolívar -->
+        <div class="logo-cell">
+          <div class="logo-svg-wrap">
+            <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <text x="60" y="20" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="400" fill="currentColor" letter-spacing="1">GRUPO</text>
+              <text x="60" y="35" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="700" fill="currentColor" letter-spacing="0">BOLÍVAR</text>
+            </svg>
+          </div>
+          <span class="logo-name">Grupo Bolívar</span>
+        </div>
+
+        <!-- Sentria -->
+        <div class="logo-cell">
+          <div class="logo-svg-wrap">
+            <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <text x="60" y="28" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="300" fill="currentColor" letter-spacing="3">SENTRIA</text>
+            </svg>
+          </div>
+          <span class="logo-name">Sentria</span>
+        </div>
+
       </div>
     </div>
   </section>
@@ -346,43 +292,23 @@
     <div class="exp-list reveal">
       <div class="exp-item">
         <div class="exp-date">Aug 2025 — Jan 2026</div>
-        <div>
-          <div class="exp-company">Hibrids</div>
-          <div class="exp-role" data-i18n="exp.hibrids.role">Senior UX UI Designer</div>
-          <div class="exp-desc" data-i18n="exp.hibrids.desc">Led UX strategy, coordinated the design team, and maintained design systems. Validated solutions through research and testing. Collaborated across product, dev, and business teams.</div>
-        </div>
+        <div><div class="exp-company">Hibrids</div><div class="exp-role" data-i18n="exp.hibrids.role">Senior UX UI Designer</div><div class="exp-desc" data-i18n="exp.hibrids.desc">Led UX strategy, coordinated the design team, and maintained design systems. Validated solutions through research and testing.</div></div>
       </div>
       <div class="exp-item">
         <div class="exp-date">2023 — Aug 2025</div>
-        <div>
-          <div class="exp-company">Imaginamos</div>
-          <div class="exp-role" data-i18n="exp.imaginamos.role">Senior UX UI Designer</div>
-          <div class="exp-desc" data-i18n="exp.imaginamos.desc">Defined cross-functional design strategies integrating AI models. Led and mentored high-performance UX teams. Reported outcomes to VPs. Architected design systems with advanced tokenization.</div>
-        </div>
+        <div><div class="exp-company">Imaginamos</div><div class="exp-role" data-i18n="exp.imaginamos.role">Senior UX UI Designer</div><div class="exp-desc" data-i18n="exp.imaginamos.desc">Defined cross-functional design strategies integrating AI models. Led and mentored high-performance UX teams. Reported outcomes to VPs.</div></div>
       </div>
       <div class="exp-item">
         <div class="exp-date">May 2022 — Feb 2023</div>
-        <div>
-          <div class="exp-company">Novatec Solutions</div>
-          <div class="exp-role" data-i18n="exp.novatec.role">UX UI Designer</div>
-          <div class="exp-desc" data-i18n="exp.novatec.desc">Designed front-end apps under Santander's design system. Led usability tests, A/B tests, and card sorting. Worked closely with devs, POs, and stakeholders.</div>
-        </div>
+        <div><div class="exp-company">Novatec Solutions</div><div class="exp-role" data-i18n="exp.novatec.role">UX UI Designer</div><div class="exp-desc" data-i18n="exp.novatec.desc">Designed front-end apps under Santander's design system. Led usability tests, A/B tests, and card sorting.</div></div>
       </div>
       <div class="exp-item">
         <div class="exp-date">Sep 2020 — Feb 2022</div>
-        <div>
-          <div class="exp-company">Inventto Group</div>
-          <div class="exp-role" data-i18n="exp.inventto.role">Graphic UX UI Designer</div>
-          <div class="exp-desc" data-i18n="exp.inventto.desc">User research through in-person interviews. Website optimization based on data and business goals. Built customer journey strategies and validated prototypes with end users.</div>
-        </div>
+        <div><div class="exp-company">Inventto Group</div><div class="exp-role" data-i18n="exp.inventto.role">Graphic UX UI Designer</div><div class="exp-desc" data-i18n="exp.inventto.desc">User research through in-person interviews. Website optimization based on data and business goals.</div></div>
       </div>
       <div class="exp-item">
         <div class="exp-date">Nov 2019 — Apr 2020</div>
-        <div>
-          <div class="exp-company">StoreON Corporate</div>
-          <div class="exp-role" data-i18n="exp.storeon.role">UX UI Designer</div>
-          <div class="exp-desc" data-i18n="exp.storeon.desc">E-commerce web design for tech brands including Samsung, Apple, and Black &amp; Decker. Managed UI kits, wireframes, and functional prototypes. Applied Design Sprint and Lean methodologies.</div>
-        </div>
+        <div><div class="exp-company">StoreON Corporate</div><div class="exp-role" data-i18n="exp.storeon.role">UX UI Designer</div><div class="exp-desc" data-i18n="exp.storeon.desc">E-commerce web design for tech brands including Samsung, Apple, and Black &amp; Decker. Applied Design Sprint and Lean methodologies.</div></div>
       </div>
     </div>
   </section>
@@ -390,12 +316,10 @@
   <!-- ── CONTACT ────────────────────────────── -->
   <section id="contact">
     <div class="contact-eyebrow" data-i18n="contact.eyebrow">Let's work together</div>
-    <h2 class="contact-title" data-i18n="contact.title">
-      Ready for<br/>the <em>next</em><br/>challenge.
-    </h2>
+    <h2 class="contact-title" data-i18n="contact.title">Ready for<br/>the <em>next</em><br/>challenge.</h2>
     <div class="contact-links">
       <a href="mailto:esteban.ui.ux@gmail.com" class="contact-link primary">✉ esteban.ui.ux@gmail.com</a>
-      <a href="https://www.linkedin.com/in/estebanuxui-6846291a7" target="_blank" class="contact-link">↗ LinkedIn</a>
+      <a href="https://www.linkedin.com/in/esteban-uxui/" target="_blank" rel="noopener" class="contact-link">↗ LinkedIn</a>
       <a href="tel:+573192472614" class="contact-link">☎ +57 319 247 2614</a>
     </div>
     <p class="contact-location" data-i18n="contact.location">📍 Bogotá, Colombia · Open to remote &amp; relocation</p>
@@ -408,6 +332,5 @@
   </footer>
 
   <script type="module" src="js/main.js"></script>
-
 </body>
 </html>
