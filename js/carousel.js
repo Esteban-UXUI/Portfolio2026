@@ -1,18 +1,16 @@
 /* ============================================
-   CAROUSEL — Infinite auto-scroll loop
-   Duplicates cards so the loop is seamless.
-   Pauses on hover (via CSS).
+   CAROUSEL — duplicates items for infinite loop
+   Works for both project carousel and logo track
    ============================================ */
 
 export function initCarousel() {
-  const track = document.querySelector('.carousel-track');
-  if (!track) return;
-
-  // Duplicate all cards for seamless infinite loop
-  const cards = Array.from(track.children);
-  cards.forEach(card => {
-    const clone = card.cloneNode(true);
-    clone.setAttribute('aria-hidden', 'true');
-    track.appendChild(clone);
-  });
+  // Logo track (clients section)
+  const logoTrack = document.getElementById('logo-track');
+  if (logoTrack) {
+    Array.from(logoTrack.children).forEach(item => {
+      const clone = item.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      logoTrack.appendChild(clone);
+    });
+  }
 }
