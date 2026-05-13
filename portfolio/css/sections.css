@@ -419,33 +419,3 @@ footer {
   color: var(--muted);
   letter-spacing: 0.08em;
 }
-
-/* ============================================
-   SCROLL SKEW EFFECT
-   Applied via JS smooth-scroll.js
-   Transition smooths the skew between frames
-   ============================================ */
-
-#about,
-#skills,
-#projects,
-#clients,
-#experience {
-  transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  will-change: transform;
-}
-
-/* Inner content counter-skews so text stays straight */
-#about .about-grid,
-#about .section-label,
-#skills .skills-grid,
-#skills .section-label,
-#projects .section-header,
-#projects .projects-bento,
-#clients .clients-header,
-#clients .logo-carousel-wrap,
-#experience .exp-list,
-#experience .section-label {
-  transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  will-change: transform;
-}
